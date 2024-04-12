@@ -1,0 +1,20 @@
+<h2 style="text-align: center;">File Download</h2>
+<hr>
+
+<a href="{% url 'upload' %}">Upload File</a>
+
+{% csrf_token %}
+<table border="1px solid black" style="width: 50%;">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Download File</th>
+    </tr>
+    {% for file in files %}
+    <tr>
+        <td>{{ file.id }}</td>
+        <td>{{ file.name }}</td>
+        <td><a href="{% url 'download' file.id %}">Download</a></td>
+    </tr>
+    {% endfor %}
+</table>

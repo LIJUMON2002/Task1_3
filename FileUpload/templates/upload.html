@@ -1,0 +1,10 @@
+<h2 style="text-align: center;">File Upload</h2>
+<hr>
+
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <input type="text" name="name" id="name">
+    <input type="file" name="file" id="file">
+
+    <button type="submit">Upload</button>
+</form>
